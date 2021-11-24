@@ -16,7 +16,7 @@ int main()
 
 
     //Variabler för uträkning av min/max
-    int min = 0;
+    int min;
     int max = 0;
 
     std::cout << "Det här programmet räknar ut medelvärdet av ett användarinput samt get max och min värde av givet input." << std::endl
