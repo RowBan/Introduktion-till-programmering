@@ -10,8 +10,8 @@ Introduktion programmering 7,5hp
 int main()
 {
 
-    std::ifstream person;                                                                       //ifstream variable for reading from file
-    std::ofstream personNew;                                                                    //ofstream variable for output to new file
+    std::ifstream person;                                                                       //ifstream class for reading from file
+    std::ofstream personNew;                                                                    //ofstream class for output to new file
     person.open("names.txt");                                                                   //Open names.txt for instream
     std::string firstName, surName, nID, Adr, gender;                                           //Variable string for holding data from names.txt
 
@@ -41,7 +41,7 @@ int main()
             personNew << surName << ", " << firstName << gender << std::endl << Adr << std::endl;
         }
         personNew.close();
-        person.close();                                                                         //Close file
+        person.close();                                                                         //Close files
         std::cout << "\nFile closed." << std::endl;
     }
     else
