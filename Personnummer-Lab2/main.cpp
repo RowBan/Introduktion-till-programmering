@@ -12,8 +12,8 @@ int main()
 
     std::ifstream person;                                                                       //ifstream class for reading from file
     std::ofstream personNew;                                                                    //ofstream class for output to new file
-    person.open("names.txt");                                                                   //Open names.txt for instream
     std::string firstName, surName, nID, Adr, gender;                                           //Variable string for holding data from names.txt
+    person.open("names.txt");                                                                   //Open names.txt for instream
 
     if(person.is_open())                                                                        //Verify file open
     {
@@ -36,7 +36,6 @@ int main()
             {
                 gender = " [M]";
             }
-            //std::cout << static_cast<int>((nID.at(8) - 48) % 2 == 0) << std::endl;
             std::cout << surName << ", " << firstName << gender << std::endl << Adr << std::endl;
             personNew << surName << ", " << firstName << gender << std::endl << Adr << std::endl;
         }
