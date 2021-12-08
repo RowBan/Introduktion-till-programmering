@@ -1,10 +1,4 @@
-#ifndef FUNK1_H
-#define FUNK1_H
-
 #include <iostream>
-
-const int SIFFRAN = 123;
-
-void hej( std::string );
-
+#ifndef SORT1_H
+#define SORT1_H
 #endif

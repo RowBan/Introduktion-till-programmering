@@ -11,11 +11,11 @@ CXX=g++
 CXXFLAGS=-I$(IDIR)
 
 #Dependencies (.h)
-_DEPS = sort1.h sort2.h
+_DEPS = sort1.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 #Object files (.o)
-_OBJ = main.o sort1.o sort2.o
+_OBJ = main.o sort1.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 #All .cpp files into .o files, place in src/ofiles/
@@ -29,5 +29,6 @@ Sort-Lab3: $(OBJ)
 
 clean:
 	rm -f $(ODIR)/*.o *~ core $(IDIR)/*~ Sort-Lab3
+
 run:
 	./Sort-Lab3
