@@ -1,8 +1,8 @@
 #Compiler
-C = g++
+CXX = g++
 
 #Compiler flags
-CFLAGS = -I.
+CXXFLAGS = -I.
 
 #Dependencies (empty)
 DEPS =
@@ -10,11 +10,11 @@ DEPS =
 #Objects
 OBJ = main.o
 
-%.o: %.c $(DEPS)
-	$(C) -c -o $@ $< $(CFLAGS)
+%.o: %.cpp $(DEPS)
+	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
 Personnummer-Lab2: $(OBJ)
-	$(C) -o $@ $^ $(CFLAGS)
+	$(CXX) -o $@ $^ $(CXXFLAGS)
 
 .PHONY: clean
 clean:
