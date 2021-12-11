@@ -3,9 +3,6 @@
 
 int main()
 {
-  cout << SIFFRAN << endl;
-  hej( "Namn" );
-  hej( "Annat Namn" );
-  hoj();
-  return 0;
+
+return(0);
 }
