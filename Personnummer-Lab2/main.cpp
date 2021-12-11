@@ -27,8 +27,8 @@ int main()
             getline(person, surName);
             getline(person, nID);
             getline(person, Adr);
-            //if((nID[8] - '0') % 2 == 0)                                                       //Metod 1 för modulus av personnummer på index 8
-            if(static_cast<int>((nID.at(8) - 48)) % 2 == 0)                                     //Metod 2 för modulus av personnummer på index 8
+            //if((nID[8] - '0') % 2 == 0)                                                       //Method 1 for modulus of nationalID on index 8
+            if(static_cast<int>((nID.at(8) - 48)) % 2 == 0)                                     //Method 2 for modulus of nationalID on index 8
             {
                 gender = " [F]";
             }
