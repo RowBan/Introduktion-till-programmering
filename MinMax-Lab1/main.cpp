@@ -9,13 +9,13 @@ Introduktion programmering 7,5hp
 
 int main()
 {
-    //Variabler för uträkning av medelvärde
+    //Variables for calculation of average
     int x = 0;
     int cnt = 0;
     int sum = 0;
 
 
-    //Variabler för uträkning av min/max
+    //Variables for calculation of min/max
     int min;
     int max = 0;
 
@@ -25,11 +25,10 @@ int main()
     while(std::cin >> x)
         {
         
-        //Variabler för medelvärdet
         cnt++;
         sum += x;
 
-            //Finn min/max
+            //Find min/max
             if(min > x)
             {
                 min = x;
@@ -43,7 +42,7 @@ int main()
 
         std::cout << "Det största värdet av numren är: " << max << " och det minsta är: " << min << std::endl;
         std::cout << "Den total mängden nummer är: " << cnt << " och summan av numren är: " << sum << std::endl;
-        //Uträkning av medelvärde och skriv det
+        //Calculation of average and average and print to console
         std::cout << "Medelvärdet är: " << sum / static_cast<double>(cnt) << std::endl;
 
 return(0);
