@@ -22,5 +22,5 @@ int main()
   else
     std::cout << "File couldn't open\n" << std::endl;
 
-  return 0;
+  return(0);
 }
