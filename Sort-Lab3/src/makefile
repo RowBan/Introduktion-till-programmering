@@ -4,10 +4,10 @@ IDIR =../include/
 #Object file directory (.o)
 ODIR=ofiles
 
-#Compiler constant
+#Compiler
 CXX=g++
 
-#Compiler flags constant (-I include flag, $(IDIR) directory)
+#Compiler flags (-I include flag, $(IDIR) directory)
 CXXFLAGS=-I$(IDIR)
 
 #Dependencies (.h)
@@ -18,10 +18,11 @@ DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 _OBJ = main.o sort1.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
-#All .cpp files into .o files, place in src/ofiles/
+#All .cpp + .h files into .o files, place in src/ofiles/
 $(ODIR)/%.o: %.cpp $(DEPS)
 	$(CXX) -c -o $@ $< $(CXXFLAGS)
 
+#Link all .o files into executable
 Sort-Lab3: $(OBJ)
 	$(CXX) -o $@ $^ $(CXXFLAGS)
 
