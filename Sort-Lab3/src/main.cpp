@@ -5,10 +5,11 @@
 int main()
 {
   std::ifstream inFile;
-  std::string strFile;
+  std::string filename;
   std::cout << "Choose a file to check if it's sorted: " << std::endl;
-  std::cin >> strFile;
-  inFile.open(strFile);
+  std::cin >> filename;
+
+  inFile.open(filename);
 
   if(inFile.is_open()) 
   {
@@ -16,7 +17,8 @@ int main()
     
     while(!inFile.eof())
     {
-      std::cout << strFile << std::endl;
+      getline(inFile, filename);
+      std::cout << filename << std::endl;
     }
   }
   else
