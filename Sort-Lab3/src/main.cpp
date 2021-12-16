@@ -10,49 +10,18 @@ int main()
     std::ifstream inFile1, inFile2;
     std::ofstream outFile;
     std::string filename1, filename2;
-    bool issorted;
+    merge(filename1, filename2, inFile1, inFile2, outFile);
+    //bool issorted;
     //issorted = is_sorted(filename1, filename2, inFile1, inFile2);
     
     /*if(issorted == true)
     {
         std::cout << "File is sorted." << std::endl;
+        merge(filename1, filename2, inFile1, inFile2, outFile);
     }
     else
-        std::cout << "File is not sorted." << std::endl;*/
-    merge(filename1, filename2, inFile1, inFile2, outFile);
-    return(0);
-}
-
-void merge(std::string filename1Ref, std::string filename2Ref, std::ifstream& inFile1Ref, std::ifstream& inFile2Ref, std::ofstream& outFileRef)
-{
-    std::cout << "Choose two sorted files to merge: " << std::endl;
-    std::cin >> filename1Ref >> filename2Ref;
-    inFile1Ref.open(filename2Ref), inFile2Ref.open(filename2Ref), outFileRef.open("Merged");
-    int a, b;
-    inFile1Ref >> a;
-    inFile2Ref >> b;
-    while(!inFile1Ref.eof() && !inFile2Ref.eof())
-    {
-        if(a < b)
-        {
-            outFileRef << a << std::endl;
-            inFile1Ref >> a;
-        }
-        else
-            outFileRef << b << std::endl;
-            inFile2Ref >> b;
-    }
-    while(!inFile1Ref.eof())
-    {
-        outFileRef << a << std::endl;
-        inFile1Ref >> a;
-    }
-    while(!inFile2Ref.eof())
-    {
-        outFileRef << b;
-        inFile2Ref >> b;
-    }
-return;
+        std::cout << "File is not sorted." << std::endl;
+    return(0);*/
 }
 
 /*bool is_sorted(std::string chksortfile1, std::string chksortfile2, std::ifstream& inFileRef1, std::ifstream& inFileRef2)
@@ -93,3 +62,41 @@ return;
         std::cout << "File couldn't open\n" << std::endl;
 return true;
 }*/
+
+void merge(std::string filenameRef1, std::string filenameRef2, std::ifstream& inFileRef1, std::ifstream& inFileRef2, std::ofstream& outFileRef)
+{
+    std::cout << "Choose two files to merge: " << std::endl;
+    std::cin >> filenameRef1 >> filenameRef2;
+    inFileRef1.open(filenameRef1), inFileRef2.open(filenameRef2), outFileRef.open("Merged");
+    int a, b;
+    inFileRef1 >> a;
+    inFileRef2 >> b;
+    if(inFileRef1.is_open() && inFileRef2.is_open() && outFileRef.is_open())
+    {
+        std::cout << "Output filestream opened correctly." << std::endl;
+    }
+    else
+        std::cout << "Output filestream did not open correctly." << std::endl;
+    /*while(!inFileRef1.eof() && !inFileRef2.eof())
+    {
+        if(a < b)
+        {
+            outFileRef << a << std::endl;
+            inFileRef1 >> a;
+        }
+        else
+            outFileRef << b << std::endl;
+            inFileRef2 >> b;
+    }*/
+    while(!inFileRef1.eof())
+    {
+        outFileRef << a << std::endl;
+        inFileRef1 >> a;
+    }
+    while(!inFileRef2.eof())
+    {
+        outFileRef << b << std::endl;
+        inFileRef2 >> b;
+    }
+return;
+}
