@@ -11,11 +11,11 @@ CXX=g++
 CXXFLAGS=-I$(IDIR)
 
 #Dependencies (.h)
-_DEPS = sort1.h
+_DEPS = #issorted.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 #Object files (.o)
-_OBJ = main.o sort1.o
+_OBJ = main.o #issorted.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 #All .cpp + .h files into .o files, place in src/ofiles/
