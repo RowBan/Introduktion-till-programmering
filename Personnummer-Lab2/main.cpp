@@ -20,15 +20,15 @@ int main()
         std::cout << "File open.\n" << std::endl;
         personNew.open("newnames.txt");                                                         //Open newnames.txt for outstream
         
+        getline(person, firstName, ' ');
+        getline(person, surName);
+        getline(person, nID);
+        getline(person, Adr);
         
         while(!person.eof())
         {
-            getline(person, firstName, ' ');
-            getline(person, surName);
-            getline(person, nID);
-            getline(person, Adr);
-            //if((nID[8] - '0') % 2 == 0)                                                       //Method 1 for modulus of nationalID on index 8
-            if(static_cast<int>((nID.at(8) - 48)) % 2 == 0)                                     //Method 2 for modulus of nationalID on index 8
+            if((nID[8] - '0') % 2 == 0)                                                           //Method 1 for modulus of nationalID on index 8
+            //if(static_cast<int>((nID.at(8) - 48)) % 2 == 0)                                     //Method 2 for modulus of nationalID on index 8
             {
                 gender = " [F]";
             }
@@ -38,6 +38,10 @@ int main()
             }
             std::cout << surName << ", " << firstName << gender << std::endl << Adr << std::endl;
             personNew << surName << ", " << firstName << gender << std::endl << Adr << std::endl;
+            getline(person, firstName, ' ');
+            getline(person, surName);
+            getline(person, nID);
+            getline(person, Adr);
         }
         personNew.close();
         person.close();                                                                         //Close files
