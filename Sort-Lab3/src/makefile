@@ -11,11 +11,11 @@ CXX=g++
 CXXFLAGS=-I$(IDIR)
 
 #Dependencies (.h)
-_DEPS = #issorted.h
+_DEPS = is_sorted.h merge.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
 #Object files (.o)
-_OBJ = main.o #issorted.o
+_OBJ = main.o is_sorted.o merge.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 #All .cpp + .h files into .o files, place in src/ofiles/
@@ -29,7 +29,7 @@ Sort-Lab3: $(OBJ)
 .PHONY: clean
 
 clean:
-	rm -f $(ODIR)/*.o *~ core $(IDIR)/*~ Sort-Lab3
+	rm -f $(ODIR)/*.o *~ core $(IDIR)/*~ Sort-Lab3 Merged
 
 run:
 	./Sort-Lab3

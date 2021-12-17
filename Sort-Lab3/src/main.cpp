@@ -1,9 +1,10 @@
-//#include "issorted.h"
+#include "is_sorted.h"
+#include "merge.h"
 #include <iostream>
 #include <fstream>
 
-bool is_sorted(std::string&, std::string&, std::ifstream&, std::ifstream&);
-void merge(std::string&, std::string&, std::ifstream&, std::ifstream&, std::ofstream&);
+/*bool is_sorted(std::string&, std::string&, std::ifstream&, std::ifstream&);
+void merge(std::string&, std::string&, std::ifstream&, std::ifstream&, std::ofstream&);*/
 
 int main()
 {
@@ -25,7 +26,7 @@ int main()
     return(0);
 }
 
-bool is_sorted(std::string &filename1, std::string &filename2, std::ifstream &inFile1, std::ifstream &inFile2)
+/*bool is_sorted(std::string &filename1, std::string &filename2, std::ifstream &inFile1, std::ifstream &inFile2)
 {
     inFile1.open(filename1), inFile2.open(filename2);
     if(inFile1.is_open() && inFile2.is_open())
@@ -110,4 +111,4 @@ void merge(std::string &filename1, std::string &filename2, std::ifstream &inFile
     else
         std::cout << "Terminating" << std::endl;
 return;
-}
+}*/
