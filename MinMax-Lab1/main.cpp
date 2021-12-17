@@ -16,8 +16,8 @@ int main()
 
 
     //Variables for calculation of min/max
-    int min;
-    int max = 0;
+    int min = -214783648;
+    int max = 2147483647;
 
     std::cout << "Det här programmet räknar ut medelvärdet av ett användarinput samt get max och min värde av givet input." << std::endl
     << "Ange heltal separerat med mellanslag/enter och avsluta med CTRL+D" << std::endl;
@@ -29,11 +29,11 @@ int main()
         sum += x;
 
             //Find min/max
-            if(min > x)
+            if(min < x)
             {
                 min = x;
             }
-            if(max < x)
+            if(max > x)
             {
                 max = x;
             }
