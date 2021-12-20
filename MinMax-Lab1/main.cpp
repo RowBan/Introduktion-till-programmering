@@ -6,6 +6,7 @@ Introduktion programmering 7,5hp
 */
 
 #include <iostream>
+#include <climits>
 
 int main()
 {
@@ -16,8 +17,8 @@ int main()
 
 
     //Variables for calculation of min/max
-    int min = -214783648;
-    int max = 2147483647;
+    int min = INT_MIN;
+    int max = INT_MAX;
 
     std::cout << "Det här programmet räknar ut medelvärdet av ett användarinput samt get max och min värde av givet input." << std::endl
     << "Ange heltal separerat med mellanslag/enter och avsluta med CTRL+D" << std::endl;
