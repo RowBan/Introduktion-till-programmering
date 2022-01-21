@@ -1,14 +1,17 @@
 #Dependency file directory (.h)
-IDIR =../include/
+IDIR = ../include/
 
 #Object file directory (.o)
-ODIR=obj
+ODIR = ../obj
+
+#Source directory (.cpp)
+SRC = .
 
 #Compiler
-CXX=g++
+CXX = g++
 
 #Compiler flags (-I include flag, $(IDIR) directory)
-CXXFLAGS=-I$(IDIR)
+CXXFLAGS = -I$(IDIR)
 
 #Dependencies (.h)
 _DEPS = is_sorted.h merge.h

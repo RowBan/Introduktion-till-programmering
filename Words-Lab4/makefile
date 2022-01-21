@@ -8,10 +8,10 @@ ODIR = obj
 SRC = src
 
 #Compiler
-CXX=g++
+CXX = g++
 
 #Compiler flags (-I include flag, $(IDIR) directory)
-CXXFLAGS=-I$(IDIR)
+CXXFLAGS = -I$(IDIR)
 
 #Dependencies (.h)
 _DEPS = 
