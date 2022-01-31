@@ -6,7 +6,7 @@
 int main()
 {
     std::ifstream inFile1, inFile2;
-    std::ofstream outFile;
+    std::fstream outFile;
     std::string filename1, filename2;
     std::cout << "Choose two files to check if they're sorted: " << std::endl;
     std::cin >> filename1 >> filename2;

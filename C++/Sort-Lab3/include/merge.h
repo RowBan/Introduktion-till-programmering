@@ -3,6 +3,6 @@
 #include <iostream>
 #include <fstream>
 
-void merge(std::string&, std::string&, std::ifstream&, std::ifstream&, std::ofstream&);
+void merge(std::string&, std::string&, std::ifstream&, std::ifstream&, std::fstream&);
 
 #endif
