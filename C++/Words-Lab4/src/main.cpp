@@ -1,52 +1,54 @@
 #include <iostream>
 #include <fstream>
-#include <algorithm>
-#include <vector>
 #include <map>
+#include <string>
+#include <vector>
+#include <algorithm>
 
-bool cmp(std::pair<std::string, int>& a, std::pair<std::string, int>& b)
-{
-    return a.second < b.second;
-}
+typedef std::map<std::string, int> sWords;
 
-void sort(std::map<std::string, int>& M)
-{
-    std::vector<std::pair<std::string, int>> A;
-
-    for(auto& it : M)
-    {
-        A.push_back(it);
-    }
-
-    sort(A.begin(),A.end(), cmp);
-
-    for(auto& it : A)
-    {
-        std::cout << it.first << ' ' << it.second << std::endl;
+void countWords(std::istream & inputFile, sWords & words) {
+    std::string wordVar;
+    while(inputFile >> wordVar) {
+        ++words[wordVar];
     }
 }
 
+bool comp(std::pair<std::string, int> & firstPair, std::pair<std::string, int> & secondPair) {
+    return firstPair.second > secondPair.second;
+}
+  
+void sort(std::map<std::string, int> & mapSort) {
 
-int main()
-{
-    std::fstream inFile;
-    std::string file;
-    std::string tempStore;
-    std::map<std::string, int> M;
-    std::cout << "Choose a file to check: " << std::endl;
-    std::cin >> file;
-    inFile.open(file);
-    if(inFile.is_open())
-    {
-        std::cout << "File opened correctly.." << std::endl;        
-        
-        while(inFile >> tempStore)
-        {
-            std::cout << tempStore << std::endl;
-        }
+    std::vector<std::pair<std::string, int>> vect;
+
+    for(auto & i : mapSort) {
+        vect.push_back(i);
     }
-    else
-        std::cout << "File did not open correctly.." << std::endl;
+  
+    std::sort(vect.begin(), vect.end(), comp);
+  
+    for (auto & i : vect) {
+  
+        std::cout << i.first << ' ' << i.second << std::endl;
+    }
+}
 
+int main() {
+
+    std::cout << "Enter a file: ";
+    std::string filename; std::cin >> filename; //std::getline(std::cin, filename);
+    std::ifstream inputFile(filename);
+
+    if(!inputFile.is_open()) {
+        std::cerr << "Cannot open file: " << filename << std::endl;
+        std::exit(1);
+    }
+
+    sWords storeWords;
+    countWords(inputFile, storeWords);
+
+    sort(storeWords);
+    
 return(0);
 }
