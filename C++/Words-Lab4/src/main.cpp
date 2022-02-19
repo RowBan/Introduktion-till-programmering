@@ -1,16 +1,29 @@
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <map>
 #include <string>
 #include <vector>
 #include <algorithm>
+#include <cctype>
 
 typedef std::map<std::string, int> sWords;
 
+/*bool filter(char c) {
+    return isalpha(c) == 0;
+}*/
+
 void countWords(std::istream & inputFile, sWords & words) {
     std::string wordVar;
-    while(inputFile >> wordVar) {
-        ++words[wordVar];
+    char c;
+    while(inputFile >> c) {
+
+        wordVar.push_back(c);
+
+        if(isalpha(c) != 0) {
+            ++words[wordVar];
+            wordVar.push_back(c);
+        }
     }
 }
 
@@ -18,7 +31,7 @@ bool comp(std::pair<std::string, int> & firstPair, std::pair<std::string, int> &
     return firstPair.second > secondPair.second;
 }
   
-void sort(std::map<std::string, int> & mapSort) {
+void sorting(std::map<std::string, int> & mapSort) {
 
     std::vector<std::pair<std::string, int>> vect;
 
@@ -48,7 +61,7 @@ int main() {
     sWords storeWords;
     countWords(inputFile, storeWords);
 
-    sort(storeWords);
+    sorting(storeWords);
     
 return(0);
 }
